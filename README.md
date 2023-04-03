@@ -2,11 +2,7 @@
 
 # Cakery
 
-## Description
-
-```
-Background
-```
+## Background
 
 ```
 Cakery is a backery, who sells Cake and Breads. The have a variety of cakes i.e. Birthday cake, Wedding cake, Party cakes, etc.
