@@ -19,20 +19,28 @@ The application will be using cake products from this website: https://www.taste
 
 ### all cakes `Get method`
 
-`localhost:8080/cakes`
+```
+localhost:8080/cakes
+```
 
 ### cakes based on categories `Get method`
 
-`localhost:8080/cakes/category?={category-name}`
+```
+localhost:8080/cakes/category?={category-name}
+```
 
 ### single cake by id `Get method`
 
-`localhost:8080/cakes/{cakeId}`
+```
+localhost:8080/cakes/{cakeId}
+```
 
-### Purchase request `post method`
+### Purchase request `Post method`
 
-`localhost:8080/purchase`
-`Body: body object with all the required fields`
+```
+localhost:8080/purchase
+Body: body object with all the required fields
+```
 
 ## Data storage
 
