@@ -1,34 +1,32 @@
-# Cakery `App Name`
+# Panda Kook `App Name`
 
 ## Background
 
 ```
-Cakery is a backery, who sells Cake and Breads.
-The have a variety of cakes i.e. Birthday cake, Wedding cake, Party cakes, etc.
-The application will be using cake products from this website:
-https://www.taste.com.au/baking/articles/top-50-cakes/4zag3onm
+Panda kook is an Indian food restaurant, who sells Indian authentic cuisines.
+
 ```
 
 ## Backend functionality
 
 `backend apis`
 
-### all cakes `Get method`
+### all dishes `Get method`
 
 ```
-localhost:8080/cakes
+localhost:8080/cuisines 
 ```
 
-### cakes based on categories `Get method`
+### dishes based on categories `Get method`
 
 ```
-localhost:8080/cakes/category?={category-name}
+localhost:8080/cuisines/category?={category-name}
 ```
 
 ### single cake by id `Get method`
 
 ```
-localhost:8080/cakes/{cakeId}
+localhost:8080/cuisine/{cuisinesId}
 ```
 
 ### Purchase request `Post method`
@@ -41,10 +39,10 @@ Body: body object with all the required fields
 ## Data storage
 
 ```
-ALl the cakes data will be stored locally in the postgres.
+ALl the cuisines data will be stored locally in the postgres.
 There will be three tables in the database
-1. Cakes (all products)
-2. Buyers (all new authenticated users)
+1. cuisines (all products)
+2. Buyers (all the users)
 3. Purchases (all the purchases)
 ```
 
