@@ -1,13 +1,13 @@
-package com.example.guesser;
+package com.example.pandakook;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GuesserApplication {
+public class PandaKookApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GuesserApplication.class, args);
+		SpringApplication.run(PandaKookApplication.class, args);
 	}
 
 }
