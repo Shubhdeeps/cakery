@@ -1,31 +1,42 @@
 import Box from "@mui/material/Box";
 import Title from "../components/titles/Title";
-import { ourSpecialDishes } from "../components/home/OurSpecial";
-import React from "react";
-import SpecialCard from "../components/cards/SpecialCard";
+import React, { useState } from "react";
+import MenuCard from "../components/cards/MenuCard";
+import cuisines from "../assets/cuisine.json";
+import { Dish } from "../types/Dish";
 
 export default function Menu() {
   return (
-    <Box
-      sx={{
-        mt: "50px",
-        display: "flex",
-        flexDirection: "column",
-        gap: "50px",
-      }}
-    >
-      <Category />
-      <Category />
-      <Category />
-      <Category />
-    </Box>
+    <>
+      <Box
+        sx={{
+          mt: "50px",
+          mb: "50px",
+          display: "flex",
+          flexDirection: "column",
+          gap: "50px",
+        }}
+      >
+        {cuisines.cuisines.map((category) => {
+          const key = Object.keys(category)[0] as "Noodles";
+          const data = category[key] as unknown as Dish[];
+          console.log(key);
+
+          return (
+            <React.Fragment key={key}>
+              <Category title={key} data={data} />
+            </React.Fragment>
+          );
+        })}
+      </Box>
+    </>
   );
 }
 
-const Category = () => {
+const Category = ({ title, data }: { title: string; data: Dish[] }) => {
   return (
     <>
-      <Title category="CHICKEN ROAD" />
+      <Title category={title} />
       <Box
         sx={{
           display: "flex",
@@ -34,18 +45,16 @@ const Category = () => {
             xs: "center",
             sm: "start",
           },
-          mt: "50px",
-          mb: "50px",
           gap: {
-            xs: "100px",
-            sm: "80px",
+            xs: "40px",
+            sm: "20px",
           },
         }}
       >
-        {ourSpecialDishes.map((cuisine) => {
+        {data.map((cuisine) => {
           return (
             <React.Fragment key={cuisine.id}>
-              <SpecialCard data={cuisine} />
+              <MenuCard data={cuisine} />
             </React.Fragment>
           );
         })}

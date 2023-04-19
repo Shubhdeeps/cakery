@@ -10,7 +10,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="blur-bg">{blueSVG}</div>
       <div className="layout_child">
         <Header />
-        <Container>{children}</Container>
+        <Container maxWidth="xl">{children}</Container>
       </div>
     </div>
   );

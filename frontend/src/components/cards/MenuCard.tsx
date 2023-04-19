@@ -1,10 +1,10 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { Dish } from "../../types/Dish";
-import { useState } from "react";
 import ProductDialog from "../models/CartModel";
+import { useState } from "react";
 
-export default function SpecialCard({ data }: { data: Dish }) {
+export default function MenuCard({ data }: { data: Dish }) {
   const [model, setModal] = useState<Dish | null>(null);
 
   return (
@@ -16,25 +16,36 @@ export default function SpecialCard({ data }: { data: Dish }) {
           product={model}
         />
       )}
-      <div className="special-card" onClick={() => setModal(data)}>
-        <img src={data.img} className="special-card_img" />
+      <div onClick={() => setModal(data)} className="menu-card">
         <Box
           sx={{
-            mt: "80px",
-            px: 1,
-            //   border: "1px solid red",
             display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "space-between",
-            height: "120px",
+            alignItems: "start",
+            gap: "10px",
           }}
         >
+          {data.img ? (
+            <img src={data.img} className="menu-card_img" />
+          ) : (
+            <Box
+              className="menu-card_img"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "32px",
+                fontWeight: 700,
+                border: "1px solid grey",
+              }}
+            >
+              {data.name.charAt(0)}
+            </Box>
+          )}
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
+              alignItems: "start",
             }}
           >
             <Typography
@@ -62,6 +73,7 @@ export default function SpecialCard({ data }: { data: Dish }) {
               fontWeight: 700,
               fontSize: "22px",
               lineHeight: "20px",
+              alignSelf: "flex-end",
             }}
           >
             {data.cost}
