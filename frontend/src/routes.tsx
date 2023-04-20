@@ -2,9 +2,10 @@ import React, { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Routes from "./pages/Routes";
 import Menu from "./pages/Menu";
-const HomePage = React.lazy(
-  () => import(/* webpackChunkName: "HomePage" */ "./pages/Home")
-);
+import HomePage from "./pages/Home";
+// const HomePage = React.lazy(
+//   () => import(/* webpackChunkName: "HomePage" */ "./pages/Home")
+// );
 
 export const router = createBrowserRouter([
   {

@@ -10,6 +10,9 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import { Dish } from "../../types/Dish";
+import { addItemsToCart } from "../../utils/persistanceStore";
+import CartItemSnackbar from "../cart/ItemAddedToCart";
+import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   dialog: {
@@ -36,39 +39,49 @@ export default function ProductDialog({
   onClose: () => void;
   product: Dish;
 }) {
+  const [openBar, setOpenBar] = useState(false);
   const classes = useStyles();
 
   const handleAddToCart = () => {
-    // TODO: Implement add to cart functionality
+    addItemsToCart(product);
+    onClose();
+    setOpenBar(true);
   };
 
   return (
-    <Dialog open={open} onClose={onClose} classes={{ paper: classes.dialog }}>
-      <DialogTitle>{product.name}</DialogTitle>
-      <DialogContent>
-        <img src={product.img} alt={product.name} className={classes.image} />
-        <DialogContentText>{product.description}</DialogContentText>
-        <Typography variant="h6" color="secondary">
-          {`$${product.cost}`}
-        </Typography>
-      </DialogContent>
-      <DialogActions>
-        <Button color="secondary" onClick={onClose}>
-          Cancel
-        </Button>
-        <Button
-          onClick={handleAddToCart}
-          variant="contained"
-          size="medium"
-          color="primary"
-          sx={{
-            borderRadius: "50px",
-            px: "50px",
-          }}
-        >
-          Add to Cart
-        </Button>
-      </DialogActions>
-    </Dialog>
+    <>
+      <CartItemSnackbar
+        title={product.name}
+        open={openBar}
+        setOpen={setOpenBar}
+      />
+      <Dialog open={open} onClose={onClose} classes={{ paper: classes.dialog }}>
+        <DialogTitle>{product.name}</DialogTitle>
+        <DialogContent>
+          <img src={product.img} alt={product.name} className={classes.image} />
+          <DialogContentText>{product.description}</DialogContentText>
+          <Typography variant="h6" color="secondary">
+            {`$${product.cost}`}
+          </Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button color="secondary" onClick={onClose}>
+            Cancel
+          </Button>
+          <Button
+            onClick={handleAddToCart}
+            variant="contained"
+            size="medium"
+            color="primary"
+            sx={{
+              borderRadius: "50px",
+              px: "50px",
+            }}
+          >
+            Add to Cart
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </>
   );
 }

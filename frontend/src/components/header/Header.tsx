@@ -4,14 +4,13 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useLocation, useNavigate } from "react-router-dom";
 import CustomDrawer from "./Drawer";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import ShoppingCart from "../cart/Cart";
 const pages = ["Home", "Menu", "About us", "Contact"];
 
 const paths = {
@@ -32,16 +31,10 @@ function ResponsiveAppBar() {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
-  const [settings, setSettings] = React.useState(["EN", "EE"]);
+  const [cart, setCartOpen] = React.useState(false);
 
-  const handleChnageLanguage = () => {
-    setSettings((prevState) => prevState.reverse());
-  };
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = (pathName: string) => {
@@ -143,41 +136,17 @@ function ResponsiveAppBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Language">
+            <Tooltip title="Cart">
               <IconButton
-                onClick={handleOpenUserMenu}
-                sx={{ p: 0, color: "primary.main", fontSize: "16px" }}
+                onClick={() => setCartOpen(true)}
+                sx={{ p: 0, color: "secondary.main" }}
               >
-                {settings[0]} <ArrowDropDownIcon />
+                <ShoppingBasketIcon fontSize="large" />
               </IconButton>
             </Tooltip>
-            <Menu
-              sx={{ mt: "25px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {
-                <MenuItem onClick={handleCloseUserMenu}>
-                  <Typography
-                    onClick={() => handleChnageLanguage()}
-                    textAlign="center"
-                  >
-                    {settings[1]}
-                  </Typography>
-                </MenuItem>
-              }
-            </Menu>
+            {cart && (
+              <ShoppingCart open={cart} onClose={() => setCartOpen(false)} />
+            )}
           </Box>
         </Toolbar>
       </Container>

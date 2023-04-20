@@ -1,8 +1,10 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { useNavigate } from "react-router";
 
 export default function Tagline() {
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -36,6 +38,7 @@ export default function Tagline() {
         It’s not just Food, It’s an Experience.
       </Typography>
       <Button
+        onClick={() => navigate("/menu")}
         size="large"
         variant="contained"
         sx={{
