@@ -1,13 +1,13 @@
-package com.example.pandakook;
+package com.homework.bakemyday;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PandaKookApplication {
+public class BakeMyDayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PandaKookApplication.class, args);
+		SpringApplication.run(BakeMyDayApplication.class, args);
 	}
 
 }

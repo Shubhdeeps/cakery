@@ -11,7 +11,6 @@ import {
 } from "@material-ui/core";
 import { Dish } from "../../types/Dish";
 import { addItemsToCart } from "../../utils/persistanceStore";
-import CartItemSnackbar from "../cart/ItemAddedToCart";
 import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
@@ -50,11 +49,11 @@ export default function ProductDialog({
 
   return (
     <>
-      <CartItemSnackbar
+      {/* <CartItemSnackbar
         title={product.name}
         open={openBar}
         setOpen={setOpenBar}
-      />
+      /> */}
       <Dialog open={open} onClose={onClose} classes={{ paper: classes.dialog }}>
         <DialogTitle>{product.name}</DialogTitle>
         <DialogContent>

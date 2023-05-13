@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="db.changelog-1.0.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="shubhdeep" id="init-schema">
+        <sql splitStatements="false">
+            CREATE TABLE cake
+            (
+                id          SERIAL PRIMARY KEY,
+                name        varchar(255),
+                description varchar,
+                price       decimal    NOT NULL,
+                category varchar,
+                imageId varchar,
+            );
+
+            CREATE TABLE sales
+            (
+                id         SERIAL PRIMARY KEY,
+                name       varchar(255),
+                created_at timestamp DEFAULT NOW(),
+                created_by varchar(255),
+            );
+
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
