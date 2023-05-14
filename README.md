@@ -3,7 +3,7 @@
 ## Background
 
 ```
-Panda kook is an Indian food restaurant, who sells Indian authentic cuisines.
+Bake My Day is a Cake Bakery, who make and sell delicious cakes.
 
 ```
 
@@ -11,39 +11,29 @@ Panda kook is an Indian food restaurant, who sells Indian authentic cuisines.
 
 `backend apis`
 
-### all dishes `Get method`
+### all cakes `Get method`
 
 ```
-localhost:8080/cuisines 
+localhost:8080/cake/all
 ```
 
-### dishes based on categories `Get method`
+### Special Cakes `Get method`
 
 ```
-localhost:8080/cuisines/category?={category-name}
+localhost:8080/cake/category/special
 ```
 
 ### single cake by id `Get method`
 
 ```
-localhost:8080/cuisine/{cuisinesId}
-```
-
-### Purchase request `Post method`
-
-```
-localhost:8080/purchase
-Body: body object with all the required fields
+localhost:8080/cake/{cakeId}
 ```
 
 ## Data storage
 
 ```
-ALl the cuisines data will be stored locally in the postgres.
-There will be three tables in the database
-1. cuisines (all products)
-2. Buyers (all the users)
-3. Purchases (all the purchases)
+ALl the cake data will be stored locally in the postgres.
+
 ```
 
 ## Front end
