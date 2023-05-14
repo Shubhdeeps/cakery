@@ -7,14 +7,11 @@ import {
   DialogTitle,
   IconButton,
   List,
-  ListItem,
-  ListItemAvatar,
-  ListItemSecondaryAction,
   ListItemText,
   Typography,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { Dish } from "../../types/Dish";
+import { Cake } from "../../models/Cake";
 import { makeStyles, Dialog } from "@material-ui/core";
 import {
   getCartItems,
@@ -40,7 +37,7 @@ const useStyles = makeStyles(() => ({
 const ShoppingCart = ({ open, onClose }: ShoppingCartProps) => {
   const classes = useStyles();
   const [dishes, setDishes] = useState(() => getCartItems());
-  const totalcost = dishes.reduce((total, item) => total + item.cost, 0);
+  const totalprice = dishes.reduce((total, item) => total + item.price, 0);
 
   const handleRemoveItems = (id: string) => {
     setDishes(removeItemsFromCart(id));
@@ -86,14 +83,14 @@ const ShoppingCart = ({ open, onClose }: ShoppingCartProps) => {
             >
               <img
                 className="img_border"
-                src={item.img}
+                src={item.image_url}
                 alt={item.name}
                 width={80}
                 height={80}
               />
               <ListItemText
                 primary={item.name}
-                secondary={`$${item.cost.toFixed(2)}`}
+                secondary={`$${item.price.toFixed(2)}`}
               />
               <Typography sx={{ fontSize: "16px" }}>{item.count}x </Typography>
 
@@ -109,7 +106,7 @@ const ShoppingCart = ({ open, onClose }: ShoppingCartProps) => {
         </List>
         <Box sx={{ display: "flex", justifyContent: "space-between", mt: 2 }}>
           <Typography variant="subtitle1">Total:</Typography>
-          <Typography variant="subtitle1">${totalcost.toFixed(2)}</Typography>
+          <Typography variant="subtitle1">${totalprice.toFixed(2)}</Typography>
         </Box>
         <DialogContentText sx={{ mt: 2 }}>Ready to checkout?</DialogContentText>
       </DialogContent>

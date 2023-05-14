@@ -1,4 +1,4 @@
-import { Dish } from "../types/Dish";
+import { Dish } from "../models/Cake";
 
 const storage = "persist-items";
 

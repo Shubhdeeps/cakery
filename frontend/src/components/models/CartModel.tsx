@@ -9,14 +9,14 @@ import {
   DialogTitle,
   makeStyles,
 } from "@material-ui/core";
-import { Dish } from "../../types/Dish";
+import { Cake } from "../../models/Cake";
 import { addItemsToCart } from "../../utils/persistanceStore";
 import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   dialog: {
     backgroundColor: "rgba(255, 255, 255, 0.3)",
-    backdropFilter: "blur(10px)",
+    backdropFilter: "blur(40px)",
     boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.1)",
     borderRadius: theme.spacing(2),
     // padding: theme.spacing(3),
@@ -36,7 +36,7 @@ export default function ProductDialog({
 }: {
   open: boolean;
   onClose: () => void;
-  product: Dish;
+  product: Cake;
 }) {
   const [openBar, setOpenBar] = useState(false);
   const classes = useStyles();
@@ -49,23 +49,26 @@ export default function ProductDialog({
 
   return (
     <>
-      {/* <CartItemSnackbar
-        title={product.name}
-        open={openBar}
-        setOpen={setOpenBar}
-      /> */}
       <Dialog open={open} onClose={onClose} classes={{ paper: classes.dialog }}>
         <DialogTitle>{product.name}</DialogTitle>
         <DialogContent>
-          <img src={product.img} alt={product.name} className={classes.image} />
-          <DialogContentText>{product.description}</DialogContentText>
+          <img
+            src={product.image_url}
+            alt={product.name}
+            className={classes.image}
+          />
+          <DialogContentText>
+            <Typography variant="subtitle1" color="secondary">
+              {product.description}
+            </Typography>
+          </DialogContentText>
           <Typography variant="h6" color="secondary">
-            {`$${product.cost}`}
+            {`$${product.price}`}
           </Typography>
         </DialogContent>
         <DialogActions>
           <Button color="secondary" onClick={onClose}>
-            Cancel
+            Close
           </Button>
           <Button
             onClick={handleAddToCart}

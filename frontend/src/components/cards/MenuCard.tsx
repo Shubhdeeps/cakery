@@ -1,11 +1,11 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Dish } from "../../types/Dish";
+import { Cake } from "../../models/Cake";
 import ProductDialog from "../models/CartModel";
 import { useState } from "react";
 
-export default function MenuCard({ data }: { data: Dish }) {
-  const [model, setModal] = useState<Dish | null>(null);
+export default function MenuCard({ data }: { data: Cake }) {
+  const [model, setModal] = useState<Cake | null>(null);
 
   return (
     <>
@@ -24,23 +24,7 @@ export default function MenuCard({ data }: { data: Dish }) {
             gap: "10px",
           }}
         >
-          {data.img ? (
-            <img src={data.img} className="menu-card_img" />
-          ) : (
-            <Box
-              className="menu-card_img"
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "32px",
-                fontWeight: 700,
-                border: "1px solid grey",
-              }}
-            >
-              {data.name.charAt(0)}
-            </Box>
-          )}
+          <img src={data.image_url} className="menu-card_img" />
           <Box
             sx={{
               display: "flex",
@@ -57,7 +41,7 @@ export default function MenuCard({ data }: { data: Dish }) {
             >
               {data.name}
             </Typography>
-            <Typography
+            {/* <Typography
               sx={{
                 fontWeight: 300,
                 fontSize: "12px",
@@ -66,7 +50,7 @@ export default function MenuCard({ data }: { data: Dish }) {
               }}
             >
               {data.description}
-            </Typography>
+            </Typography> */}
           </Box>
           <Typography
             sx={{
@@ -76,7 +60,7 @@ export default function MenuCard({ data }: { data: Dish }) {
               alignSelf: "flex-end",
             }}
           >
-            {data.cost}
+            {data.price}
           </Typography>
         </Box>
       </div>

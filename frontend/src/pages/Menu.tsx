@@ -1,11 +1,28 @@
 import Box from "@mui/material/Box";
 import Title from "../components/titles/Title";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MenuCard from "../components/cards/MenuCard";
-import cuisines from "../assets/cuisine.json";
-import { Dish } from "../types/Dish";
+import { useFetchAllCake } from "../service/useFetchAllCakes";
+import { Cake } from "../models/Cake";
 
 export default function Menu() {
+  const { cake, loading, error, fetch } = useFetchAllCake();
+  useEffect(() => {
+    fetch();
+  }, []);
+
+  if (loading || !cake.length) {
+    return <>Loading...</>;
+  }
+  if (error) {
+    console.log(error);
+    return <>Something went wrong!</>;
+  }
+  const unfilteredCategories = cake.map((data) => data.category);
+  const filteredCategories = new Set(unfilteredCategories);
+  const categories = Array.from(filteredCategories);
+  console.log(categories);
+
   return (
     <>
       <Box
@@ -17,14 +34,13 @@ export default function Menu() {
           gap: "50px",
         }}
       >
-        {cuisines.cuisines.map((category) => {
-          const key = Object.keys(category)[0] as "Noodles";
-          const data = category[key] as unknown as Dish[];
-          console.log(key);
-
+        {categories.map((category) => {
           return (
-            <React.Fragment key={key}>
-              <Category title={key} data={data} />
+            <React.Fragment key={category}>
+              <Category
+                title={category}
+                data={cake.filter((eachCake) => eachCake.category === category)}
+              />
             </React.Fragment>
           );
         })}
@@ -33,7 +49,7 @@ export default function Menu() {
   );
 }
 
-const Category = ({ title, data }: { title: string; data: Dish[] }) => {
+const Category = ({ title, data }: { title: string; data: Cake[] }) => {
   return (
     <>
       <Title category={title} />
@@ -51,10 +67,10 @@ const Category = ({ title, data }: { title: string; data: Dish[] }) => {
           },
         }}
       >
-        {data.map((cuisine) => {
+        {data.map((cake) => {
           return (
-            <React.Fragment key={cuisine.id}>
-              <MenuCard data={cuisine} />
+            <React.Fragment key={cake.id}>
+              <MenuCard data={cake} />
             </React.Fragment>
           );
         })}

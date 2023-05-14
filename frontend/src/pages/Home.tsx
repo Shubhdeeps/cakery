@@ -1,7 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Tagline from "../components/home/Tagline";
-import HighlightedCusine from "../components/home/HighlightedCusine";
+import HighlightedCake from "../components/home/HighlightedCake";
 import OurSpecial from "../components/home/OurSpecial";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
         }}
       >
         <Tagline />
-        <HighlightedCusine />
+        <HighlightedCake />
       </Box>
       <OurSpecial />
     </>

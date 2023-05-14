@@ -1,0 +1,148 @@
+{
+  "cakes": [
+    {
+      "id": 1,
+      "name": "Red Velvet Cake",
+      "description": "A classic cake with a rich, velvety texture and a touch of cocoa powder.",
+      "price": 25.99,
+      "category": "Classic Cakes",
+      "image_url": "https://cakemehometonight.com/wp-content/uploads/2023/02/24-768x1024.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Chocolate Fudge Cake",
+      "description": "A decadent chocolate cake with a dense, fudgy texture and rich chocolate flavor.",
+      "price": 34.99,
+      "category": "Chocolate Cakes",
+      "image_url": "https://images.immediate.co.uk/production/volatile/sites/2/2019/04/chocolate-fudge-cake-105b400.jpg?quality=90&resize=556,505"
+    },
+    {
+      "id": 3,
+      "name": "Strawberry Shortcake",
+      "description": "A light and fluffy vanilla cake layered with fresh strawberries and whipped cream.",
+      "price": 29.99,
+      "category": "Fruit Cakes",
+      "image_url": "https://japan.recipetineats.com/wp-content/uploads/2020/08/Strawberry_Shortcake_5140sq.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Lemon Poppy Seed Cake",
+      "description": "A tangy lemon cake with a crunchy poppy seed topping and a sweet glaze.",
+      "price": 27.99,
+      "category": "Citrus Cakes",
+      "image_url": "https://img.taste.com.au/KhbIx3QO/taste/2020/05/jun20_lemon-poppyseed-cake-161719-1.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Carrot Cake",
+      "description": "A moist and flavorful cake made with fresh carrots, cinnamon, and nutmeg.",
+      "price": 31.99,
+      "category": "Classic Cakes",
+      "image_url": "https://www.spoonforkbacon.com/wp-content/uploads/2021/03/carrot_cake_recipe_card.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Tiramisu Cake",
+      "description": "A rich and creamy cake with layers of espresso-soaked ladyfingers and mascarpone cheese.",
+      "price": 36.99,
+      "category": "Italian Cakes",
+      "image_url": "https://hips.hearstapps.com/hmg-prod/images/tiramisu-cake1-1657209890.jpg?crop=0.8891228070175439xw:1xh;center,top&resize=1200:*"
+    },
+    {
+      "id": 7,
+      "name": "Black Forest Cake",
+      "description": "A classic German cake made with layers of chocolate cake, cherry filling, and whipped cream.",
+      "price": 32.99,
+      "category": "Classic Cakes",
+      "image_url": "https://cdn.shopify.com/s/files/1/0665/6648/8296/products/BlackForestCake_3.jpg?v=1676363141&width=1024"
+    },
+    {
+      "id": 8,
+      "name": "Banana Bread Cake",
+      "description": "A moist and delicious cake made with ripe bananas and warm spices like cinnamon and nutmeg.",
+      "price": 28.99,
+      "category": "Fruit Cakes",
+      "image_url": "https://comfybelly.com/wp-content/uploads/2019/11/74268828_2963581717003552_3272068289827700736_n.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Pineapple Upside-Down Cake",
+      "description": "A classic cake made with juicy pineapple rings, maraschino cherries, and a buttery brown sugar topping.",
+      "price": 30.99,
+      "category": "Fruit Cakes",
+      "image_url": "https://images.immediate.co.uk/production/volatile/sites/30/2019/05/Pineapple-upside-down-cake-32b5bb3.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Lemon Meringue Cake",
+      "description": "Layers of lemon sponge cake filled with tangy lemon curd and topped with fluffy meringue frosting.",
+      "price": 25.99,
+      "category": "Citrus Cakes",
+      "image_url": "https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Lemon-Meringue-Angel-Cake_EXPS_HRBZ17_23635_B09_06_6b.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Dark Chocolate Cake",
+      "description": "A rich and decadent cake made with dark chocolate and topped with ganache frosting.",
+      "price": 32.5,
+      "category": "Chocolate Cakes",
+      "image_url": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1043451_11-4713959.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Tiramisu Cake",
+      "description": "Layers of espresso-soaked sponge cake and creamy mascarpone filling, topped with cocoa powder.",
+      "price": 35.99,
+      "category": "Italian Cakes",
+      "image_url": "https://richanddelish.com/wp-content/uploads/2023/01/tiramisu-cake-1.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Matcha Cake",
+      "description": "A light and fluffy cake made with Japanese green tea powder, topped with whipped cream and red bean paste.",
+      "price": 28.5,
+      "category": "Asian Cakes",
+      "image_url": "https://www.indulgewithmimi.com/wp-content/uploads/2018/10/matcha-green-tea-mille-pancake-crepe-cake-japanese-1.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Black Forest Cake",
+      "description": "Layers of chocolate sponge cake filled with cherry compote and whipped cream, topped with chocolate shavings.",
+      "price": 30.75,
+      "category": "Classic Cakes",
+      "image_url": "https://static01.nyt.com/images/2020/01/15/dining/ss-black-forest-cake/merlin_165684495_6689b1a0-42b5-4228-b871-37bb983d797e-superJumbo.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Banana Cake",
+      "description": "A moist and flavorful cake made with ripe bananas, topped with cream cheese frosting and sliced bananas.",
+      "price": 26.99,
+      "category": "Fruit Cakes",
+      "image_url": "https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_744,ar_5:4/v1/img/recipes/67/25/6/ErcPhaBVS2OMnh07iiZf_banana-cake-with-cream-cheese-frosting-08.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Coconut Cake",
+      "description": "A tropical cake made with coconut milk and shredded coconut, topped with coconut cream cheese frosting.",
+      "price": 29.5,
+      "category": "Tropical Cakes",
+      "image_url": "https://preppykitchen.com/wp-content/uploads/2022/08/Coconut-Cake-Recipe-Card.jpg"
+    },
+    {
+      "id": 24,
+      "name": "Hummingbird Cake",
+      "description": "A southern classic with layers of banana, pineapple, and pecans, topped with cream cheese frosting.",
+      "price": 34.99,
+      "category": "Specialty Cakes",
+      "image_url": "https://hips.hearstapps.com/hmg-prod/images/hummingbird-cake-recipe-1646148097.jpg?crop=0.8891666666666667xw:1xh;center,top&resize=1200:*"
+    },
+    {
+      "id": 26,
+      "name": "German Chocolate Cake",
+      "description": "A rich and indulgent cake with layers of chocolate sponge cake, pecan-coconut frosting, and chocolate ganache.",
+      "price": 39.99,
+      "category": "Chocolate Cakes",
+      "image_url": "https://www.allrecipes.com/thmb/gu3EQEmVzx-GgKlbwyv-QMifJlA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4522230-willard-family-german-chocolate-cake-Rhonda-W.-Scott-4x3-1-2d431f87fded45f39a3b1952be9cb044.jpg"
+    }
+  ]
+}

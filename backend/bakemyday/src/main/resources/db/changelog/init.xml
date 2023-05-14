@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="db.changelog-1.0.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="shubhdeep" id="init-schema">
+        <sql splitStatements="false">
+            CREATE TABLE cake
+            (
+                id          SERIAL PRIMARY KEY,
+                name        varchar(255),
+                description varchar,
+                price       decimal    NOT NULL,
+                category varchar,
+                image_url varchar
+            );
+
+        </sql>
+    </changeSet>
+    <changeSet author="shubhdeep" id="init-data">
+        <sql splitStatements="false">
+
+            INSERT INTO cake (id, name, description, price, category, image_url)
+            VALUES (1, 'My first cake', 'Test description', 2.5, 'cake category', 'https://img.taste.com.au/hbNtzI2Q/taste/2021/08/clinkers-cake-173208-2.jpg'),
+            (2, 'My second cake', 'Something to wear', 2.4, 'cake category 2', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz61OR0LSgmXV0MJ4gKaO7yfc8mXcN8rH0EYb1wCx8-iypzXcHXFbkK0DPW7f9It6irFM'
+            );
+
+        </sql>
+    </changeSet>
+</databaseChangeLog>

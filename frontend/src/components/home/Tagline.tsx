@@ -35,7 +35,7 @@ export default function Tagline() {
           },
         }}
       >
-        It’s not just Food, It’s an Experience.
+        Indulge in sweetness, one slice at a time.
       </Typography>
       <Button
         onClick={() => navigate("/menu")}
@@ -43,7 +43,7 @@ export default function Tagline() {
         variant="contained"
         sx={{
           borderRadius: "50px",
-          width: "220px",
+          width: "260px",
         }}
       >
         Explore Menu

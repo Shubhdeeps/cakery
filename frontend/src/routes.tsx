@@ -1,11 +1,8 @@
-import React, { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Routes from "./pages/Routes";
 import Menu from "./pages/Menu";
 import HomePage from "./pages/Home";
-// const HomePage = React.lazy(
-//   () => import(/* webpackChunkName: "HomePage" */ "./pages/Home")
-// );
+import Aboutus from "./pages/Aboutus";
 
 export const router = createBrowserRouter([
   {
@@ -26,7 +23,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/aboutus",
-        element: <h3>aboutus</h3>,
+        element: <Aboutus />,
       },
       {
         path: "/contact",

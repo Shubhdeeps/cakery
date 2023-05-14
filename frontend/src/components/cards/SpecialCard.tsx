@@ -1,11 +1,11 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Dish } from "../../types/Dish";
+import { Cake } from "../../models/Cake";
 import { useState } from "react";
 import ProductDialog from "../models/CartModel";
 
-export default function SpecialCard({ data }: { data: Dish }) {
-  const [model, setModal] = useState<Dish | null>(null);
+export default function SpecialCard({ data }: { data: Cake }) {
+  const [model, setModal] = useState<Cake | null>(null);
 
   return (
     <>
@@ -17,17 +17,25 @@ export default function SpecialCard({ data }: { data: Dish }) {
         />
       )}
       <div className="special-card" onClick={() => setModal(data)}>
-        <img src={data.img} className="special-card_img" />
         <Box
           sx={{
-            mt: "80px",
+            height: "140px",
+          }}
+        >
+          <img
+            width="100%"
+            height="100%"
+            src={data.image_url}
+            className="special-card_img"
+          />
+        </Box>
+        <Box
+          sx={{
             px: 1,
-            //   border: "1px solid red",
+            py: 2,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            justifyContent: "space-between",
-            height: "120px",
           }}
         >
           <Box
@@ -64,7 +72,7 @@ export default function SpecialCard({ data }: { data: Dish }) {
               lineHeight: "20px",
             }}
           >
-            {data.cost}
+            {data.price}
           </Typography>
         </Box>
       </div>
