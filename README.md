@@ -1,4 +1,4 @@
-# Bake My Name `App Name`
+# Bake My Day `App Name`
 
 ## Background
 
