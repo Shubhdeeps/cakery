@@ -1,4 +1,4 @@
-# Panda Kook `App Name`
+# Bake My Name `App Name`
 
 ## Background
 
